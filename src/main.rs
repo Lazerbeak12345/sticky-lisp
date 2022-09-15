@@ -26,12 +26,17 @@ fn main() {
         Ok(file) => file
     };
     //println!("Content '{}'", file);
-    let sexp = match lexpr::from_str(file.as_str()) {
+    let _sexp = match lexpr::from_str(file.as_str()) {
         Err(reason) => {
             println!("Failed to parse sexp from file `{}`. {}", &path.display(), reason);
             return ()
         },
         Ok(sexp) => sexp,
     };
-    todo!("Do something with {}", sexp)
+    todo!("sexp to scheme AST?");
+    todo!("ast to LLVM calls");
+    //print!("Do something with {}", sexp)
+    /*let context = Context::create();
+    let module = context.create_module("sticky lisp");
+    let builder = context.create_builder();*/
 }
